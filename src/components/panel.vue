@@ -33,6 +33,7 @@ export default {
 .title-container {
   width: 100%;
   line-height: 1.25em;
+  margin-bottom: 1em;
 
   h3 {
     margin-top: 1em;

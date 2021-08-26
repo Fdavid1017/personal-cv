@@ -48,7 +48,7 @@
     </panel>
 
     <panel title="Digitális készségek">
-      <div class="m-0 p-0" style="padding-top: 1em">
+      <div class="m-0 p-0">
         {{ formattedDigitalSkills }}
       </div>
     </panel>

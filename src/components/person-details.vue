@@ -1,21 +1,22 @@
 <template>
   <div class="person-container">
     <div class="img-container">
-      <img :src="imageLoc" />
+      <div><img :src="imageLoc" /></div>
     </div>
     <div class="details-container">
       <h1 class="color-main p-0 m-0">{{ name }}</h1>
       <p><b>Állampolgárság:</b> {{ nationality }}</p>
-      <p><img src="../assets/icons/phone-call.svg" />{{ phoneNumber }}</p>
+      <p><img src="../assets/icons/phone-call.svg" /> {{ phoneNumber }}</p>
       <p><b>Születési idő:</b> {{ birthDate }}</p>
       <p><b>Nem:</b> {{ gender }}</p>
       <p>
-        <img src="../assets/icons/email.svg" /><b>E-mail-cím:</b>{{ email }}
+        <img src="../assets/icons/email.svg" /><b>E-mail-cím:</b> {{ email }}
       </p>
       <p>
-        <img src="../assets/icons/profile-user.svg" /><b>Github:</b>{{ github }}
+        <img src="../assets/icons/profile-user.svg" /><b>Github:</b>
+        {{ github }}
       </p>
-      <p><img src="../assets/icons/pin.svg" /><b>Cím:</b>{{ address }}</p>
+      <p><img src="../assets/icons/pin.svg" /><b>Cím:</b> {{ address }}</p>
     </div>
   </div>
 </template>
@@ -72,16 +73,53 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/style";
 
+@media screen and (max-width: 640px) {
+  .person-container {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, auto);
+
+    .img-container {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .details-container {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .person-container {
+    grid-template-columns: auto 90%;
+    grid-template-rows: 100%;
+
+    .img-container {
+      grid-area: 1 / 1 / 2 / 2;
+      margin-right: 2em;
+    }
+
+    .details-container {
+      grid-area: 1 / 2 / 2 / 20;
+    }
+  }
+}
+
 .person-container {
   display: grid;
-  grid-template-columns: auto 90%;
-  grid-template-rows: 100%;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
+  white-space: -moz-pre-wrap !important;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+
   .img-container {
-    grid-area: 1 / 1 / 2 / 2;
-    margin-right: 2em;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
 
     img {
       border-radius: 50%;
@@ -91,8 +129,6 @@ export default {
   }
 
   .details-container {
-    grid-area: 1 / 2 / 2 / 6;
-
     p {
       display: flex;
       align-items: center;
