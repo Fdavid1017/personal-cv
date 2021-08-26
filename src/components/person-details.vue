@@ -5,18 +5,22 @@
     </div>
     <div class="details-container">
       <h1 class="color-main p-0 m-0">{{ name }}</h1>
-      <p><b>Állampolgárság:</b> {{ nationality }}</p>
-      <p><img src="../assets/icons/phone-call.svg" /> {{ phoneNumber }}</p>
-      <p><b>Születési idő:</b> {{ birthDate }}</p>
-      <p><b>Nem:</b> {{ gender }}</p>
+      <p><b>Állampolgárság:</b>&nbsp;{{ nationality }}</p>
       <p>
-        <img src="../assets/icons/email.svg" /><b>E-mail-cím:</b> {{ email }}
+        <img src="../assets/icons/phone-call.svg" />
+        <a :href="`tel: ${phoneNumber}`">{{ phoneNumber }}</a>
+      </p>
+      <p><b>Születési idő:</b>&nbsp;{{ birthDate }}</p>
+      <p><b>Nem:</b>&nbsp;{{ gender }}</p>
+      <p>
+        <img src="../assets/icons/email.svg" /><b>E-mail-cím:</b>&nbsp;
+        <a :href="`mailto: ${email}`">{{ email }}</a>
       </p>
       <p>
-        <img src="../assets/icons/profile-user.svg" /><b>Github:</b>
-        {{ github }}
+        <img src="../assets/icons/profile-user.svg" /><b>Github:</b> &nbsp;
+        <a :href="github" target="_blank">{{ github }}</a>
       </p>
-      <p><img src="../assets/icons/pin.svg" /><b>Cím:</b> {{ address }}</p>
+      <p><img src="../assets/icons/pin.svg" /><b>Cím:</b>&nbsp;{{ address }}</p>
     </div>
   </div>
 </template>
