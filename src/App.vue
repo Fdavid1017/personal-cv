@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="top-bg-rectangle p-0 m-0" />
+    <div class="container">
+      <main-content />
+    </div>
+    <div class="bottom-bg-rectangle p-0 m-0" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MainContent from "@/components/main-content";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    MainContent,
   },
 };
 </script>
 
 <style lang="scss">
+@import "assets/style";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #565656;
+  position: relative;
+  font-weight: normal;
+
+  .container {
+    padding: 3em;
+  }
+
+  .top-bg-rectangle,
+  .bottom-bg-rectangle {
+    background-color: $blue;
+    width: 100%;
+    height: 7em;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .bottom-bg-rectangle {
+    bottom: 0;
+  }
 }
 </style>
