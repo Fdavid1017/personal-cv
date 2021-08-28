@@ -23,7 +23,6 @@ export default {
     secondary: {
       type: Boolean,
       default: false,
-      description: "Determines the underline for the title",
     },
   },
 };
@@ -38,9 +37,9 @@ export default {
   h3 {
     margin-top: 1em;
   }
-}
 
-.bottom-border {
-  border-bottom: solid #979797 2px;
+  .bottom-border {
+    border-bottom: solid #979797 2px;
+  }
 }
 </style>

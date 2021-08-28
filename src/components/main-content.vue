@@ -117,13 +117,13 @@ export default {
 .content {
   background-color: white;
   padding: 3em;
-}
 
-.muted {
-  opacity: 85%;
-}
+  .panel {
+    margin-bottom: 3em;
 
-.panel {
-  margin-bottom: 3em;
+    .muted {
+      opacity: 85%;
+    }
+  }
 }
 </style>

@@ -94,8 +94,8 @@ export default {
 
 @media screen and (min-width: 640px) {
   .person-container {
-    grid-template-columns: auto 90%;
-    grid-template-rows: 100%;
+    grid-template-columns: auto;
+    min-width: 0;
 
     .img-container {
       grid-area: 1 / 1 / 2 / 2;
